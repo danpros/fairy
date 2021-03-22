@@ -163,13 +163,13 @@
 								</section>
 								
 								<section id="recent-posts-widget" class="widget widget_recent_entries">
-									<h2 class="widget-title">Recent Posts</h2>
+									<h2 class="widget-title"><?php echo i18n("Recent_posts");?></h2>
 									<?php echo recent_posts();?>
 								</section>
 									
 								<?php if (config('views.counter') === 'true') :?>		
 								<section id="popular-widget" class="widget widget_popular_entries">
-									<h2 class="widget-title">Popular</h2>
+									<h2 class="widget-title"><?php echo i18n("Popular_posts");?></h2>
 									<?php echo popular_posts();?>
 								</section>
 								<?php endif;?>
@@ -182,18 +182,18 @@
 								<?php endif;?>
 								
 								<section id="categories-widget" class="widget widget_categories">
-									<h2 class="widget-title">Categories</h2>
+									<h2 class="widget-title"><?php echo i18n('Category');?></h2>
 									<?php echo category_list();?>
 								</section>
 									
 								<section id="archives-widget" class="widget archives">
 								<style>.widget_archives ul.archivegroup li:before {content:'';}</style>
-									<h2 class="widget-title">Archives</h2>
+									<h2 class="widget-title"><?php echo i18n("Archives");?></h2>
 									<?php echo archive_list();?>
 								</section>
 									
 								<section id="tags-widget" class="widget widget_tags">
-									<h2 class="widget-title">Tags</h2>
+									<h2 class="widget-title"><?php echo i18n("Tags");?></h2>
 									<div class="tag-cloud"><?php echo tag_cloud();?></div>
 								</section>
 									
