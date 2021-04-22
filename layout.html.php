@@ -209,7 +209,7 @@
 		<section class="site-footer-bottom">
 			<div class="container">
 				<div class="fairy-menu-social"></div>
-				<div class="site-reserved text-center"><?php echo copyright();?><br><p>Designed by <a href="http://www.candidthemes.com/" target="_blank">Candid Themes</a></p></div><!-- .site-info -->
+				<div class="site-reserved text-center"><?php echo copyright();?><br><span>Designed by <a href="http://www.candidthemes.com/" target="_blank">Candid Themes</a></span></div><!-- .site-info -->
 			</div>
 		</section>
 	</footer><!-- #colophon -->

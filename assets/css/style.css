@@ -4416,7 +4416,7 @@ table.variations td:nth-child(2){
 	text-decoration:underline;	
 }
 
-.site-reserved p {
+.site-reserved span {
 	font-size:10px;
 	display:inline;
 	text-transform:uppercase;
