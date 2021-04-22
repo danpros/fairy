@@ -64,7 +64,7 @@
 				<?php } ?>
 				<div class="entry-meta">
 					<span class="posted-on"><i class="fa fa-calendar"></i><a href="<?php echo $p->url;?>" rel="bookmark"><time class="entry-date published"><?php echo format_date($p->date);?></time></a></span>
-					<span class="byline"> <span class="author"><i class="fa fa-user"></i><a class="url" href="<?php echo $p->authorUrl;?>"><?php echo $p->author;?></a></span></span>
+					<span class="byline"> <span class="author"><i class="fa fa-user"></i><a class="url" href="<?php echo $p->authorUrl;?>"><?php echo $p->authorName;?></a></span></span>
 					<?php if (disqus_count()) { ?> 
 						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#disqus_thread"> comments</a></span>
 					<?php } elseif (facebook()) { ?> 

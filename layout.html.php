@@ -103,8 +103,8 @@
 				
 	<div id="content" class="site-content">
 		<?php if (isset($is_front)):?>
-		<?php $count = get_tagcount('featured', 'basename'); if ($count >= 1) {?>
 		<?php $featured = get_tag('featured', 1, 6, false);?>
+		<?php if (!empty($featured)):?>
 		<section class="hero hero-slider-section">
 			<div class="container">
 
@@ -128,7 +128,7 @@
 
 							<div class="entry-meta">
 							<span class="posted-on"><i class="fa fa-calendar"></i><a href="<?php echo $f->url;?>" rel="bookmark"><time class="entry-date published"><?php echo format_date($f->date);?></time></a></span>
-							<span class="byline"> <span class="author"><i class="fa fa-user"></i><a class="ur" href="<?php echo $f->authorUrl;?>"><?php echo $f->author;?></a></span></span>
+							<span class="byline"> <span class="author"><i class="fa fa-user"></i><a class="ur" href="<?php echo $f->authorUrl;?>"><?php echo $f->authorName;?></a></span></span>
 							</div>
 						</article>
 					</div>
@@ -137,7 +137,7 @@
 
 			</div>
 		</section><!-- .hero -->
-		<?php } ?>
+		<?php endif;?>
 		<?php endif;?>
 	
 		<main class="site-main">
