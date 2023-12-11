@@ -1,27 +1,20 @@
 <?php if (!defined('HTMLY')) die('HTMLy'); ?>
 <!doctype html>
-<html lang="<?php echo str_replace('_', '-', config('language'));?>">
+<html lang="<?php echo blog_language();?>">
 <head>
     <?php echo head_contents();?>
     <title><?php echo $title;?></title>
     <meta name="description" content="<?php echo $description; ?>"/>
     <link rel="canonical" href="<?php echo $canonical; ?>" />
-	<link rel="stylesheet" id="fairy-style-css" href="<?php echo site_url();?>themes/fairy/assets/css/style.css" media="all" />
+	<link rel="stylesheet" id="fairy-style-css" href="<?php echo theme_path();?>assets/css/style.css" media="all" />
 	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
 	<link rel="stylesheet" id="Muli-400-300italic-300-css"  href="//fonts.googleapis.com/css?family=Muli%3A400%2C300italic%2C300" media="all" />
 	<link rel="stylesheet" id="Poppins-400-500-600-700-css"  href="//fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600%2C700" media="all" />
-	<link rel="stylesheet" id="font-awesome" href="<?php echo site_url();?>themes/fairy/framework/font-awesome/css/font-awesome.min.css" media="all" />
-	<link rel="stylesheet" id="slick-css" href="<?php echo site_url();?>themes/fairy/framework/slick/slick.css" media="all" />
-	<link rel="stylesheet" id="slick-theme-css" href="<?php echo site_url();?>themes/fairy/framework/slick/slick-theme.css" media="all" />
-	<script src="<?php echo site_url();?>themes/fairy/assets/js/jquery.min.js" id="jquery-core-js"></script>
+	<link rel="stylesheet" id="font-awesome" href="<?php echo theme_path();?>framework/font-awesome/css/font-awesome.min.css" media="all" />
+	<link rel="stylesheet" id="slick-css" href="<?php echo theme_path();?>framework/slick/slick.css" media="all" />
+	<link rel="stylesheet" id="slick-theme-css" href="<?php echo theme_path();?>framework/slick/slick-theme.css" media="all" />
+	<script src="<?php echo theme_path();?>assets/js/jquery.min.js" id="jquery-core-js"></script>
 </head>
-<?php     
-    if (isset($_GET['search'])) {
-        $search = _h($_GET['search']);
-        $url = site_url() . 'search/' . remove_accent($search);
-        header("Location: $url");
-    }
-?>
 <body class="home blog hfeed ct-sticky-sidebar <?php echo $bodyclass;?>">
 <?php if (facebook()) { echo facebook(); } ?>
 <?php if (login()) { toolbar(); } ?>
@@ -209,17 +202,17 @@
 		<section class="site-footer-bottom">
 			<div class="container">
 				<div class="fairy-menu-social"></div>
-				<div class="site-reserved text-center"><?php echo copyright();?><br><span>Designed by <a href="http://www.candidthemes.com/" target="_blank">Candid Themes</a></span></div><!-- .site-info -->
+				<div class="site-reserved text-center"><?php echo copyright();?><br><span>Designed by <a href="http://www.candidthemes.com/" target="_blank" rel="nofollow">Candid Themes</a></span></div><!-- .site-info -->
 			</div>
 		</section>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <a href="javascript:void(0);" class="footer-go-to-top go-to-top"><i class="fa fa-long-arrow-up"></i></a>
-<script src="<?php echo site_url();?>themes/fairy/assets/js/ResizeSensor.min.js"></script>
-<script src="<?php echo site_url();?>themes/fairy/assets/js/theia-sticky-sidebar.min.js"></script>
-<script src="<?php echo site_url();?>themes/fairy/framework/slick/slick.js"></script>
-<script src="<?php echo site_url();?>themes/fairy/assets/js/custom.js"></script>
+<script src="<?php echo theme_path();?>assets/js/ResizeSensor.min.js"></script>
+<script src="<?php echo theme_path();?>assets/js/theia-sticky-sidebar.min.js"></script>
+<script src="<?php echo theme_path();?>framework/slick/slick.js"></script>
+<script src="<?php echo theme_path();?>assets/js/custom.js"></script>
 <?php if (analytics()): ?><?php echo analytics() ?><?php endif; ?>
 </body>
 </html>
