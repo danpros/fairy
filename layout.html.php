@@ -26,10 +26,10 @@
 			<button class="close-btn"><i class="fa fa-times"></i></button>
 			<form class="search-form">
 				<label>
-				<span class="screen-reader-text">Search for:</span>
+				<span class="screen-reader-text"><?php echo i18n("Search_for");?></span>
 				<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="search" />
 				</label>
-				<input type="submit" class="search-submit" value="Search" />
+				<input type="submit" class="search-submit" value="<?php echo i18n("Search");?>" />
 			</form>           
 		</div>
 	</section>
@@ -148,10 +148,10 @@
 								<section id="search-widget" class="widget widget_search">
 									<form class="search-form">
 									<label>
-										<span class="screen-reader-text">Search for:</span>
-										<input type="search" class="search-field" placeholder="Search …" value="" name="search">
+										<span class="screen-reader-text"><?php echo i18n("Search_for");?></span>
+										<input type="search" class="search-field" placeholder="<?php echo i18n("Search");?> …" value="" name="search">
 									</label>
-									<input type="submit" class="search-submit" value="Search">
+									<input type="submit" class="search-submit" value="<?php echo i18n("Search");?>">
 									</form>
 								</section>
 								
@@ -169,7 +169,7 @@
 								
 								<?php if (disqus()): ?>
 								<section id="comments_widget" class="widget widget_comments">
-									<h2 class="widget-title">Recent Comments</h2>
+									<h2 class="widget-title"><?php echo i18n("Comments");?></h2>
 									<script src="//<?php echo config('disqus.shortname');?>.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=0&amp;avatar_size=48&amp;excerpt_length=200&amp;hide_mods=0" type="text/javascript"></script><style>li.dsq-widget-item {padding-top:15px;} img.dsq-widget-avatar {margin-right:5px;}</style>
 								</section>
 								<?php endif;?>

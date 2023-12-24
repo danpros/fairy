@@ -45,9 +45,9 @@
 					<span class="posted-on"><i class="fa fa-calendar"></i><a href="<?php echo $p->url;?>" rel="bookmark"><time class="entry-date published"><?php echo format_date($p->date);?></time></a></span>
 					<span class="byline"> <span class="author "><i class="fa fa-user"></i><a class="url" href="<?php echo $p->authorUrl;?>"><?php echo $p->authorName;?></a></span></span>
 					<?php if (disqus_count()) { ?> 
-						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#disqus_thread"> comments</a></span>
+						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#disqus_thread"> <?php echo i18n("Comments");?></a></span>
 					<?php } elseif (facebook()) { ?> 
-						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> comments</span></a></span>
+						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> <?php echo i18n("Comments");?></span></a></span>
 					<?php } ?>
 					<?php if (login()) { echo '<span><i class="fa fa-pencil" aria-hidden="true"></i> <a href="'. $p->url .'/edit?destination=post">Edit</a></span>'; } ?>
 				</div><!-- .entry-meta -->
@@ -66,7 +66,7 @@
 	<?php $related = get_related($p->related, true, 2);?>
 	<?php $total = count($related); $i = 1; if ($total >= 1) { ?>
 	<div class="related-post">
-		<h2 class="post-title">Related Posts</h2>
+		<h2 class="post-title"><?php echo i18n("Related_posts");?></h2>
 		<div class="row">
 			<?php foreach ($related as $r):?>
 			<div class="col-1-1 col-sm-1-2 col-md-1-2">
@@ -92,10 +92,10 @@
 	<h2 class="screen-reader-text">Post navigation</h2>
 	<div class="nav-links">
 		<?php if (!empty($next)): ?>	
-		<div class="nav-previous"><a href="<?php echo($next['url']); ?>" rel="next"><span class="nav-subtitle">Next:</span> <span class="nav-title"><?php echo($next['title']); ?></span></a></div>
+		<div class="nav-previous"><a href="<?php echo($next['url']); ?>" rel="next"><span class="nav-subtitle"><?php echo i18n("Next");?>:</span> <span class="nav-title"><?php echo($next['title']); ?></span></a></div>
 		<?php endif;?>
 		<?php if (!empty($prev)): ?>
-		<div class="nav-next"><a href="<?php echo($prev['url']); ?>" rel="prev"><span class="nav-subtitle">Previous:</span> <span class="nav-title"><?php echo($prev['title']); ?></span></a></div>
+		<div class="nav-next"><a href="<?php echo($prev['url']); ?>" rel="prev"><span class="nav-subtitle"><?php echo i18n("Prev");?>:</span> <span class="nav-title"><?php echo($prev['title']); ?></span></a></div>
 		<?php endif;?>
 	</div>
 </nav>
@@ -110,7 +110,7 @@
 <?php if (facebook() || disqus()): ?>
 <section class="comments comment-box" id="comments">
     <div class="comments-number">
-        <h3>Comments</h3>
+        <h3><?php echo i18n("Comments");?></h3>
     </div>
     <?php if (facebook()): ?>
         <div class="fb-comments" data-href="<?php echo $p->url ?>" data-numposts="<?php echo config('fb.num') ?>" data-colorscheme="<?php echo config('fb.color') ?>"></div>

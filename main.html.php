@@ -3,13 +3,13 @@
     <header class="page-header"><h1 class="page-title"><?php echo i18n('Category');?>: <?php echo $category->title;?></h1><div class="taxonomy-description"><?php echo $category->body;?></div></header>
 <?php endif;?>
 <?php if (isset($is_tag)):?>
-    <header class="page-header"><h1 class="page-title">Tag: <?php echo $tag->title;?></h1></header>
+    <header class="page-header"><h1 class="page-title"><?php echo i18n("Tags");?>: <?php echo $tag->title;?></h1></header>
 <?php endif;?>
 <?php if (isset($is_archive)):?>
-    <header class="page-header"><h1 class="page-title">Archive: <?php echo $archive->title;?></h1></header>
+    <header class="page-header"><h1 class="page-title"><?php echo i18n("Archives");?>: <?php echo $archive->title;?></h1></header>
 <?php endif;?>
 <?php if (isset($is_search)):?>
-    <header class="page-header"><h1 class="page-title">Search: <?php echo $search->title;?></h1></header>
+    <header class="page-header"><h1 class="page-title"><?php echo i18n("Search");?>: <?php echo $search->title;?></h1></header>
 <?php endif;?>
 <?php if (isset($is_type)):?>
     <header class="page-header"><h1 class="page-title">Type: <?php echo ucfirst($type->title);?></h1></header>
@@ -66,9 +66,9 @@
 					<span class="posted-on"><i class="fa fa-calendar"></i><a href="<?php echo $p->url;?>" rel="bookmark"><time class="entry-date published"><?php echo format_date($p->date);?></time></a></span>
 					<span class="byline"> <span class="author"><i class="fa fa-user"></i><a class="url" href="<?php echo $p->authorUrl;?>"><?php echo $p->authorName;?></a></span></span>
 					<?php if (disqus_count()) { ?> 
-						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#disqus_thread"> comments</a></span>
+						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#disqus_thread"> <?php echo i18n("Comments");?></a></span>
 					<?php } elseif (facebook()) { ?> 
-						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> comments</span></a></span>
+						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> <?php echo i18n("Comments");?></span></a></span>
 					<?php } ?>
 					<?php if (login()) { echo '<span><i class="fa fa-pencil" aria-hidden="true"></i> <a href="'. $p->url .'/edit?destination=post">Edit</a></span>'; } ?>
 				</div><!-- .entry-meta -->
