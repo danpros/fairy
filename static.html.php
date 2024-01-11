@@ -26,3 +26,17 @@
 	</div>
 	
 </article>
+
+<?php if (!empty($next) || !empty($prev)): ?>
+<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+	<h2 class="screen-reader-text">Post navigation</h2>
+	<div class="nav-links">
+		<?php if (!empty($next)): ?>	
+		<div class="nav-previous"><a href="<?php echo($next['url']); ?>" rel="next"><span class="nav-subtitle"><?php echo i18n("Next");?>:</span> <span class="nav-title"><?php echo($next['title']); ?></span></a></div>
+		<?php endif;?>
+		<?php if (!empty($prev)): ?>
+		<div class="nav-next"><a href="<?php echo($prev['url']); ?>" rel="prev"><span class="nav-subtitle"><?php echo i18n("Prev");?>:</span> <span class="nav-title"><?php echo($prev['title']); ?></span></a></div>
+		<?php endif;?>
+	</div>
+</nav>
+<?php endif; ?>
