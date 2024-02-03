@@ -20,12 +20,12 @@
 				<div class="entry-content">
 					<?php echo $about ?>
 				</div>
-				<h3 class="post-index">Posts by this author</h3>
+				<h3 class="post-index"><?php echo i18n('Post_by_author');?></h3>
 				<?php if (!empty($posts)) { ?>
 					<ul class="post-list">
 						<?php foreach ($posts as $p): ?>
 							<li class="item">
-								<span><a href="<?php echo $p->url ?>"><?php echo $p->title ?></a></span> on
+								<span><a href="<?php echo $p->url ?>"><?php echo $p->title ?></a></span> -
 								<span><?php echo format_date($p->date) ?></span>. <?php echo i18n('Posted_in');?> <span class="tags-p"><?php echo $p->category;?></span>
 							</li>
 						<?php endforeach; ?>
