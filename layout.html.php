@@ -42,22 +42,12 @@
 				<div class="row">
 					<div class="col col-sm-2-3 col-md-2-3 col-lg-2-4 top-menu">
 					<nav class="site-header-top-nav">
-						<a class="rss-icon" href="<?php echo site_url();?>feed/rss"><i class="fa fa-rss"></i></a>
+						<button class="search-toggle rss-icon"><i class="fa fa-search"></i></button>
 					</nav>
 					</div>
 					<div class="col col-sm-1-3 col-md-1-3 col-lg-1-4">
-						<div class="fairy-menu-social topbar-flex-grid">
-							<button class="search-toggle"><i class="fa fa-search"></i></button>
-							<?php if(!empty(config('social.twitter')) || !empty(config('social.facebook'))):?>	
-							<ul id="menu-social" class="social-menu">
-								<?php if(!empty(config('social.facebook'))):?>
-								<li  class="menu-item "><a target="_blank" rel="noopener" href="<?php echo config('social.facebook');?>">Facebook</a></li>
-								<?php endif;?>
-								<?php if(!empty(config('social.twitter'))):?>
-								<li class="menu-item"><a target="_blank" rel="noopener" href="<?php echo config('social.twitter');?>">Twitter</a></li>
-								<?php endif;?>
-							</ul>
-							<?php endif;?>
+						<div class="topbar-flex-grid">
+							<?php echo social();?>
 						</div>
 					</div>
 				</div>
