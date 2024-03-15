@@ -6,6 +6,7 @@
     <title><?php echo $title;?></title>
     <meta name="description" content="<?php echo $description; ?>"/>
     <link rel="canonical" href="<?php echo $canonical; ?>" />
+    <?php echo $metatags;?>
 	<link rel="stylesheet" id="fairy-style-css" href="<?php echo theme_path();?>assets/css/style.css" media="all" />
 	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
 	<link rel="stylesheet" id="Muli-400-300italic-300-css"  href="//fonts.googleapis.com/css?family=Muli%3A400%2C300italic%2C300" media="all" />
