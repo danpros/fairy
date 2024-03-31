@@ -15,7 +15,7 @@
 		<div class="card_body">
 			<div>
 				<h1 class="card_title"><?php echo $p->title;?></h1>
-				<p><?php if (login()) { echo '<span><i class="fa fa-pencil" aria-hidden="true"></i> <a href="'. $p->url .'/edit?destination=post">Edit</a></span>'; } ?></p>			
+				<p><?php if (authorized($p)) { echo '<span><i class="fa fa-pencil" aria-hidden="true"></i> <a href="'. $p->url .'/edit?destination=post">Edit</a></span>'; } ?></p>			
 			</div>
 			<div>
 				<div class="entry-content">

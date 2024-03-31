@@ -70,7 +70,7 @@
 					<?php } elseif (facebook()) { ?> 
 						<span><i class="fa fa-comments"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> <?php echo i18n("Comments");?></span></a></span>
 					<?php } ?>
-					<?php if (login()) { echo '<span><i class="fa fa-pencil" aria-hidden="true"></i> <a href="'. $p->url .'/edit?destination=post">Edit</a></span>'; } ?>
+					<?php if (authorized($p)) { echo '<span><i class="fa fa-pencil" aria-hidden="true"></i> <a href="'. $p->url .'/edit?destination=post">Edit</a></span>'; } ?>
 				</div><!-- .entry-meta -->
 			</div>
 			<div>
