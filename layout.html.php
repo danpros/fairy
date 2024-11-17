@@ -87,7 +87,7 @@
 				
 	<div id="content" class="site-content">
 		<?php if (isset($is_front)):?>
-		<?php $featured = get_tag('featured', 1, 6, false);?>
+		<?php $featured = recent_tag('featured', config('recent.count'), true);?>
 		<?php if (!empty($featured)):?>
 		<section class="hero hero-slider-section">
 			<div class="container">
