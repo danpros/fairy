@@ -3,9 +3,6 @@
 <html lang="<?php echo blog_language();?>">
 <head>
     <?php echo head_contents();?>
-    <title><?php echo $title;?></title>
-    <meta name="description" content="<?php echo $description; ?>"/>
-    <link rel="canonical" href="<?php echo $canonical; ?>" />
     <?php echo $metatags;?>
 	<link rel="stylesheet" id="fairy-style-css" href="<?php echo theme_path();?>assets/css/style.css" media="all" />
 	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
