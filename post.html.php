@@ -64,7 +64,7 @@
 	</div>
 	
 	<?php $related = get_related($p->related, true, 2);?>
-	<?php $total = count($related); $i = 1; if ($total >= 1) { ?>
+	<?php if (!empty($related)): ?>
 	<div class="related-post">
 		<h2 class="post-title"><?php echo i18n("Related_posts");?></h2>
 		<div class="row">
@@ -80,11 +80,10 @@
 					</div>
 				</div>
 			</div>
-			<?php if ($i++ >= 2) break; ?>
 			<?php endforeach;?>
 		</div>
 	</div>	
-	<?php }?>
+	<?php endif; ?>
 </article>
 
 <?php if (!empty($next) || !empty($prev)): ?>
