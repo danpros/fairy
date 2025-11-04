@@ -1,0 +1,51 @@
+{
+  "name": "Fairy",
+  "version": "v2.2",
+  "author": "Candid Themes",
+  "homepage": "https://www.candidthemes.com/",
+  "description": "Fairy theme ported to HTMLy.",
+  "settings": [
+    {
+      "type": "checkbox",
+      "name": "recent_posts",
+      "label": "Recent Posts",
+      "value": "",
+      "info": "Enable Recent Posts widget"
+    },
+    {
+      "type": "checkbox",
+      "name": "popular_posts",
+      "label": "Popular Posts",
+      "value": "",
+      "info": "Enable Popular Posts widget. The views counter need to be enabled first."
+    },
+    {
+      "type": "checkbox",
+      "name": "category_list",
+      "label": "Category List",
+      "value": "",
+      "info": "Enable Category List widget"
+    },
+    {
+      "type": "checkbox",
+      "name": "archive",
+      "label": "Archive",
+      "value": "",
+      "info": "Enable Archive widget"
+    },
+    {
+      "type": "checkbox",
+      "name": "tagcloud",
+      "label": "TagCloud",
+      "value": "",
+      "info": "Enable TagCloud widget"
+    },
+    {
+      "type": "text",
+      "name": "featured",
+      "label": "Featured Posts",
+      "value": "",
+      "info": "The posts that are featured will be taken from the tag above (the tag slug). <br>If leave empty it will use the default tag: <code>featured</code>"
+    }
+  ]
+}

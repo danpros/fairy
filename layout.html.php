@@ -5,9 +5,8 @@
     <?php echo head_contents();?>
     <?php echo $metatags;?>
 	<link rel="stylesheet" id="fairy-style-css" href="<?php echo theme_path();?>assets/css/style.css" media="all" />
-	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-	<link rel="stylesheet" id="Muli-400-300italic-300-css"  href="//fonts.googleapis.com/css?family=Muli%3A400%2C300italic%2C300" media="all" />
-	<link rel="stylesheet" id="Poppins-400-500-600-700-css"  href="//fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600%2C700" media="all" />
+	<link rel="stylesheet" id="Mulish" href="<?php echo theme_path();?>assets/css/mulish.css" media="all" />
+	<link rel="stylesheet" id="Poppins" href="<?php echo theme_path();?>assets/css/poppins.css" media="all" />
 	<link rel="stylesheet" id="font-awesome" href="<?php echo theme_path();?>framework/font-awesome/css/font-awesome.min.css" media="all" />
 	<link rel="stylesheet" id="slick-css" href="<?php echo theme_path();?>framework/slick/slick.css" media="all" />
 	<link rel="stylesheet" id="slick-theme-css" href="<?php echo theme_path();?>framework/slick/slick-theme.css" media="all" />
@@ -84,7 +83,8 @@
 				
 	<div id="content" class="site-content">
 		<?php if (isset($is_front)):?>
-		<?php $featured = recent_tag('featured', config('recent.count'), true);?>
+		<?php $the_tag = (!empty(theme_config('featured'))) ? theme_config('featured') : 'featured';?>
+		<?php $featured = recent_tag($the_tag, config('recent.count'), true);?>
 		<?php if (!empty($featured)):?>
 		<section class="hero hero-slider-section">
 			<div class="container">
@@ -133,22 +133,19 @@
 						<div id="secondary" class="col-12 col-md-1-3 col-lg-1-3">					
 							<aside class="widget-area">
 
-								<section id="search-widget" class="widget widget_search">
-									<form class="search-form">
-									<label>
-										<span class="screen-reader-text"><?php echo i18n("Search_for");?></span>
-										<input type="search" class="search-field" placeholder="<?php echo i18n("Search");?> …" value="" name="search">
-									</label>
-									<input type="submit" class="search-submit" value="<?php echo i18n("Search");?>">
-									</form>
+								<section id="about-widget" class="widget widget_about">
+									<h2 class="widget-title"><?php echo i18n("about");?></h2>
+                                    <div><?php echo blog_description();?></div>
 								</section>
 								
+								<?php if (theme_config('recent_posts')) :?>
 								<section id="recent-posts-widget" class="widget widget_recent_entries">
 									<h2 class="widget-title"><?php echo i18n("Recent_posts");?></h2>
 									<?php echo recent_posts();?>
 								</section>
+								<?php endif;?>
 									
-								<?php if (config('views.counter') === 'true') :?>		
+								<?php if (theme_config('popular_posts')) :?>		
 								<section id="popular-widget" class="widget widget_popular_entries">
 									<h2 class="widget-title"><?php echo i18n("Popular_posts");?></h2>
 									<?php echo popular_posts();?>
@@ -162,21 +159,27 @@
 								</section>
 								<?php endif;?>
 								
+								<?php if (theme_config('category_list')) :?>
 								<section id="categories-widget" class="widget widget_categories">
 									<h2 class="widget-title"><?php echo i18n('Category');?></h2>
 									<?php echo category_list();?>
 								</section>
-									
+								<?php endif;?>
+								
+								<?php if (theme_config('archive')) :?>
 								<section id="archives-widget" class="widget archives">
 								<style>.widget_archives ul.archivegroup li:before {content:'';}</style>
 									<h2 class="widget-title"><?php echo i18n("Archives");?></h2>
 									<?php echo archive_list();?>
 								</section>
-									
+								<?php endif;?>
+								
+								<?php if (theme_config('tagcloud')) :?>
 								<section id="tags-widget" class="widget widget_tags">
 									<h2 class="widget-title"><?php echo i18n("Tags");?></h2>
 									<div class="tag-cloud"><?php echo tag_cloud();?></div>
 								</section>
+								<?php endif;?>
 									
 							</aside><!-- #secondary -->
 						</div>			
